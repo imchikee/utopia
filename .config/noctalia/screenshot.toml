@@ -1,0 +1,12 @@
+# Keep selection, annotation and completion inside Noctalia's native overlay.
+[shell.screenshot]
+freeze_screen = true
+annotate = true
+confirm_region = false
+remember_last_region = false
+skip_annotate_on_copy_save = false
+copy_to_clipboard = true
+save_to_file = true
+close_on_copy = true
+close_on_save = true
+directory = "~/Pictures/Screenshots"

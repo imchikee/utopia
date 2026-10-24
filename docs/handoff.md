@@ -7,6 +7,31 @@ the product sequence in [roadmap.md](roadmap.md), and incident history in
 
 ## Active pause point — 2026-10-24
 
+- **Screenshot annotation follow-up — 2026-10-25:** the maintainer rejected
+  screenshot-to-Satty auto-opening and the proposed notification-edit detour:
+  the desired flow stays on a frozen capture overlay, like Snipaste, with no
+  external editor window or second edit shortcut. Region/screen shortcuts now
+  target Noctalia's native capture overlay with annotation enabled; Enter
+  completes copy/save. Native Niri window capture remains the direct-copy path.
+  The temporary Satty event listener and startup entry were removed. See
+  [the workflow](../desktop/niri/screenshots.md). Deployed on the desktop after
+  backups, preserving its localized capture directory, gaming bindings and
+  `Super+/` help. Live config confirms freeze/annotation/copy/save enabled and
+  external piping disabled. Both host Niri compositions, repository/live Noctalia
+  configs, 133 + 67 tests and diff checks pass. The maintainer confirmed the
+  native-overlay workflow meets current usage needs. This desktop slice is
+  accepted; laptop deployment is not claimed. Do not reopen the rejected Satty
+  auto-popup or add another editing shortcut without a new requirement.
+
+- **Desktop help deployment — 2026-10-25:** deployed `utopia/shortcuts` and
+  enabled it in the desktop's existing Noctalia plugin config after backups.
+  Replaced only its obsolete native-help binding with `Super+/`; the rest of
+  the desktop's live bindings, including gaming customizations, were preserved.
+  Niri/Noctalia validation passes. The live reader resolves 134 bindings,
+  including the screenshot annotation guidance, and IPC opening was verified
+  with `activePanelId = utopia/shortcuts:guide`. This is a narrow help deployment,
+  not acceptance or deployment of the entire laptop interaction milestone.
+
 - **Accepted laptop milestone:** desktop interaction, implemented on
   `work/desktop-interaction`. Read the
   [interaction design](design/desktop-interaction.md) and
