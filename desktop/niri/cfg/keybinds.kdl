@@ -167,11 +167,11 @@ binds {
     Mod+M                               { maximize-window-to-edges; }
 
     // ─── Screenshots ───
-    CTRL+Shift+1                        { screenshot; }
-    CTRL+Shift+2                        { screenshot-screen; }
+    CTRL+Shift+1                        { spawn "noctalia" "msg" "screenshot-region"; }
+    CTRL+Shift+2                        { spawn "noctalia" "msg" "screenshot-fullscreen"; }
     CTRL+Shift+3                        { screenshot-window; }
-    Print                               { screenshot; }
-    CTRL+Print                          { screenshot-screen; }
+    Print                               { spawn "noctalia" "msg" "screenshot-region"; }
+    CTRL+Print                          { spawn "noctalia" "msg" "screenshot-fullscreen"; }
     ALT+Print                           { screenshot-window; }
 
     // ─── Emergency Escape Key ───

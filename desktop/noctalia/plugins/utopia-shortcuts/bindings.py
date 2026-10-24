@@ -180,6 +180,8 @@ LABELS = {
 }
 
 COMMANDS = {
+    ("noctalia", "msg", "screenshot-region"): ("capture", "区域截图"),
+    ("noctalia", "msg", "screenshot-fullscreen"): ("capture", "屏幕截图"),
     ("kitty",): ("apps", "终端"),
     ("google-chrome-stable",): ("apps", "浏览器"),
     ("nautilus",): ("apps", "文件管理器"),
@@ -213,6 +215,8 @@ def command_argv(action: Node) -> tuple[str, ...]:
 
 
 COMMAND_SEARCH = {
+    ("noctalia", "msg", "screenshot-region"): "screenshot annotate rectangle circle 截图 标注 画框 画圈",
+    ("noctalia", "msg", "screenshot-fullscreen"): "screenshot annotate fullscreen 截图 标注 屏幕",
     ("kitty",): "terminal shell 终端 命令行 控制台",
     ("google-chrome-stable",): "browser chrome 浏览器 网页 上网",
     ("nautilus",): "files folders file manager 文件 文件夹 文档 目录",
@@ -258,6 +262,8 @@ DETAILS = {
 
 def action_metadata(action: Node) -> tuple[str, str]:
     detail = DETAILS.get(action.name, "")
+    if command_argv(action) in (("noctalia", "msg", "screenshot-region"), ("noctalia", "msg", "screenshot-fullscreen")):
+        detail = "冻结画面后在原生浮层标注，不弹出外部编辑器；S 画框、O 画圈、A 箭头，回车完成复制和保存。"
     if action.name == "quit":
         skip = action.props.get("skip-confirmation") in ("true", "#true")
         detail = "此绑定跳过退出确认，请谨慎使用。" if skip else "先显示退出确认；不是关闭当前窗口。"
