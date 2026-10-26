@@ -1,7 +1,8 @@
 # Noctalia manifest reload: upstream report draft
 
 Status: the reproduction below is preserved as evidence for
-[PR #5014](https://github.com/noctalia-dev/noctalia/pull/5014), ready for review.
+[PR #5014](https://github.com/noctalia-dev/noctalia/pull/5014), merged on
+2026-10-23 at 21:20 UTC.
 Original runtime reproduction uses packaged Noctalia 5.3.0; the candidate fix
 based on upstream main was subsequently built and tested as recorded below.
 
@@ -150,8 +151,10 @@ counts **0, 1, 1**, replacing the packaged version's **0, 0, 1** above. It was n
 installed over the normal desktop. Build tools and missing headers were prepared
 only in temporary directories; no system package was installed.
 
-The fix is published as an open PR and is ready for review. Initial PR-template enforcement and
-maintainer-intake checks succeeded; code review and merge remain outstanding.
+The fix was merged as `b6f069284c13c1bd2c8499206df4713821c73a08`. The maintainer
+added `db78e7d83fbaabad00b8f046ab5b137516d2aef9` to share source-root collection
+and correct comments before merging. That follow-up was inspected, not separately
+compiled locally; the measurements above belong to the original proposal.
 The [MIT-attributed patch and PR description](../upstream/noctalia/README.md)
 are preserved in Utopia for continuation. The separate Utopia callback
 CPU-timeout fix is outside this contribution.
