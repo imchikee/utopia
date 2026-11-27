@@ -5,7 +5,26 @@ or in a new agent session. Keep durable direction in [vision.md](vision.md),
 the product sequence in [roadmap.md](roadmap.md), and incident history in
 [journal/](journal/).
 
-## Active pause point — 2026-10-24
+## Active pause point — 2026-10-26
+
+- **Laptop update synchronization — 2026-10-26:** repository main already
+  contained PRs #29/#30 at `69db9a5`. Canonical origin/submodule URLs were
+  synchronized to the published `imchikee` namespace without changing the
+  pinned editor revision or historical commit identity. On `arch-laptop`,
+  backed up and deployed only the reviewed screenshot policy, four screenshot
+  bindings and shortcuts-reader annotation metadata. Existing live binding
+  differences matched the previous accepted baseline exactly; there was no
+  custom Noctalia screenshot policy to overwrite. Niri/Noctalia live validation,
+  config reload, 133 + 67 tests, plugin lint and isolated laptop composition
+  checks pass. No screenshot was captured, no clipboard was inspected and no
+  package was installed. The maintainer confirmed PrintScreen works on the
+  laptop, then requested removal of the awkward Ctrl+Shift+1 region-capture
+  alias without testing it. Shared policy now uses PrintScreen alone for region
+  capture; screen/window shortcuts remain unchanged. The laptop's accepted
+  region flow does not imply physical screen/window shortcut acceptance.
+  These records and the alias removal are collected on `work/arch-laptop-sync`.
+  The desktop still needs its live region binding reviewed against this shared
+  policy during its next sync; preserve its gaming/input customizations.
 
 - **Screenshot annotation follow-up — 2026-10-25:** the maintainer rejected
   screenshot-to-Satty auto-opening and the proposed notification-edit detour:
@@ -36,7 +55,8 @@ the product sequence in [roadmap.md](roadmap.md), and incident history in
   `work/desktop-interaction`. Read the
   [interaction design](design/desktop-interaction.md) and
   [operation inventory](design/desktop-interaction-inventory.md).
-  The shared configuration has 135 bindings / 100 actions; the read-only
+  After the 2026-10-26 alias removal, shared configuration has 134 bindings /
+  100 actions; the read-only
   `utopia/shortcuts` guide shows 84 entries before search and expands workspace
   ranges when searching. The final content audit found no unclassified or
   generic custom-action entries in the shared configuration.
@@ -67,13 +87,17 @@ the product sequence in [roadmap.md](roadmap.md), and incident history in
   check. Calls and screen sharing remain deferred; the laptop has no gaming
   requirement. Preserve the desktop's host-specific gaming/input work below.
 - **Upstream contribution:** [Noctalia PR #5014](https://github.com/noctalia-dev/noctalia/pull/5014)
-  is open and ready for review, not merged; no reviews/comments as of the
-  2026-10-24 check. Template and maintainer-intake checks pass. Commit
-  `9b1278ced8a9867c3c8308d5c12e4efd0c330d73` contains only three upstream
+  was merged on 2026-10-23 at 21:20 UTC, merge commit
+  `b6f069284c13c1bd2c8499206df4713821c73a08`. Before merging, the maintainer
+  added `db78e7d83fbaabad00b8f046ab5b137516d2aef9` to share root collection
+  logic and correct comments. The saved patch is the original proposal at
+  `9b1278ced8a9867c3c8308d5c12e4efd0c330d73`, not the final merged tree.
+  That proposal contains only three upstream
   fix/test files. Full compilation, three relevant test executables, a failing
   original-guard control and a passing patched isolated-shell reproduction
-  establish the contribution's local evidence; metadata checks are not code
-  review. The [MIT-attributed patch and PR description](upstream/noctalia/README.md)
+  establish the original proposal's local evidence; the maintainer follow-up
+  was inspected but not separately compiled here. The
+  [MIT-attributed patch and PR description](upstream/noctalia/README.md)
   preserve the exact base and continuation steps. The installed shell was not
   replaced. See the [runtime validation lesson](journal/2026-10-23-noctalia-plugin-runtime-validation.md)
   and [minimal reproduction](journal/2026-10-23-noctalia-manifest-reload-report.md).
