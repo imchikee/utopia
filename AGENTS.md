@@ -74,10 +74,14 @@ validation, and recovery path before an apply operation may manage them.
 - Prefer dry-run, diff, validation, and a reviewable Git working tree before any
   apply step. Do not commit or push automatically unless the active task calls
   for it.
+- Never commit directly to `main`; `main` is protected and accepts changes via
+  pull requests. Check the current branch first and create a topic branch
+  (e.g., `fix/...`, `work/...`, `docs/...`, `chore/...`) before committing.
 
 ## Start every repository task here
 
-1. Run `git status --short` and `git submodule status`.
+1. Run `git status --short`, `git branch --show-current`, and
+   `git submodule status`.
 2. Read the relevant profile or host scope when those manifests exist.
 3. Inspect live and repository versions before copying either direction.
 4. Keep shared policy separate from host facts and experimental settings.
