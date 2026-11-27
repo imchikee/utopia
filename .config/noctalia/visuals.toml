@@ -12,8 +12,9 @@ builtin = "Tokyo-Night"
 wallpaper_scheme = "m3-content"
 
 # Utopia-owned adapters use explicit Material roles instead of inheriting the
-# terminal palette's historical color names. The Starship post-hook reuses
-# Noctalia's mutation-safe marked-block applicator.
+# terminal palette's historical color names. The Starship post-hook uses a
+# Utopia-owned mutation-safe marked-block applicator so upstream Noctalia
+# template removals cannot break prompt updates.
 [theme.templates]
 enable_builtin_templates = false
 builtin_ids = []
@@ -32,7 +33,7 @@ output_path = "$XDG_CONFIG_HOME/niri/noctalia.kdl"
 [theme.templates.user.utopia-starship]
 input_path = "templates/utopia/starship-palette.toml"
 output_path = "$XDG_CACHE_HOME/noctalia/starship-palette.toml"
-post_hook = "bash /usr/share/noctalia/assets/templates/starship/apply.sh"
+post_hook = "bash '{{ config_dir }}/templates/utopia/starship-apply.sh'"
 
 # Opt-in Fcitx adapter. The host-scoped `utopia deploy` command validates the
 # generated theme before selecting it and creating the local opt-in marker.
